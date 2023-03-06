@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/fonts/FlyingBird-Yz9Ga.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=2]
 [ext_resource path="res://themes/button.tres" type="Theme" id=3]
-[ext_resource path="res://assets/audio/mrbluu_track_notmine.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/MrBluuThemeSong.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100

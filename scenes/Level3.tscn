@@ -66,3 +66,5 @@ ball = NodePath("../Ball")
 
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 486, 50 )
+
+[connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]
