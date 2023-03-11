@@ -1,0 +1,40 @@
+{
+	"color": "#ffb82121",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1678525977.json",
+	"mirror_portraits": false,
+	"name": "AngryRed",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		},
+		{
+			"name": "32x32 first tileset",
+			"path": "res://assets/img/32x32 first tileset.png"
+		},
+		{
+			"name": "angrycharacter",
+			"path": "res://assets/img/angrycharacter.png"
+		},
+		{
+			"name": "character",
+			"path": "res://assets/img/character.png"
+		},
+		{
+			"name": "portal",
+			"path": "res://assets/img/portal.png"
+		},
+		{
+			"name": "spikes",
+			"path": "res://assets/img/spikes.png"
+		}
+	],
+	"scale": 100
+}

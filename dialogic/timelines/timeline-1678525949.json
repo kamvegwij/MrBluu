@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"character": "character-1678525977.json",
+			"event_id": "dialogic_001",
+			"portrait": "angrycharacter",
+			"text": "Ha ha! You've done well so far MrBluu!"
+		},
+		{
+			"character": "character-1678525977.json",
+			"event_id": "dialogic_001",
+			"portrait": "angrycharacter",
+			"text": "Unfortunately I can't let you make any more progress!"
+		},
+		{
+			"character": "character-1678525977.json",
+			"event_id": "dialogic_001",
+			"portrait": "angrycharacter",
+			"text": "As you can see, you're in my chamber room. The longer you stay in here, the worse things will become! Ha ha, welcome Mr Bluu!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1678525949.json",
+		"name": "EnterAngryRed"
+	}
+}
