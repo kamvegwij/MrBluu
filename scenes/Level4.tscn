@@ -85,4 +85,7 @@ tile_data = PoolIntArray( -2490393, 1610612736, 0, -2490392, 1610612736, 0, -249
 [node name="AngryBluu" parent="." instance=ExtResource( 6 )]
 position = Vector2( -360, -1100 )
 
+[node name="npcCam" type="Camera2D" parent="."]
+position = Vector2( -360, -1109 )
+
 [connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]
