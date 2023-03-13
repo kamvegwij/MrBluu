@@ -8,10 +8,11 @@ func _ready():
 		add_child(dialog)
 		dialog.connect("timeline_end", self, "after_dialog")
 		get_node("npcCam").set_current(true)
+		GameManager.player.sleeping = true
 		
 func _process(_delta):
 	$VectorCreator.position = $Ball.position
 
 func _after_dialog():
-	print("Introduced AngryRed")
+	GameManager.player.sleeping = true
 	get_node("npcCam").set_current(false)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://PlayerTest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/img/portal.png" type="Texture" id=2]
+
+[node name="JoystickMovementTest" type="Node2D"]
+
+[node name="bg" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = 4.0
+margin_top = 1.0
+margin_right = 513.0
+margin_bottom = 1019.0
+mouse_filter = 2
+color = Color( 0.419608, 0.709804, 0.756863, 1 )
+
+[node name="PlayerTest" parent="." instance=ExtResource( 1 )]
+position = Vector2( 267, 497 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 435, 539 )
+scale = Vector2( 0.2125, 0.2 )
+texture = ExtResource( 2 )
