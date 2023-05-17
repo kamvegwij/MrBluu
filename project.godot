@@ -51,12 +51,14 @@ _global_script_class_icons={
 [application]
 
 config/name="MrBluu"
-run/main_scene="res://scenes/Menu.tscn"
+run/main_scene="res://scenes/Intro.tscn"
+boot_splash/image="res://assets/img/logo.png"
 config/icon="res://assets/img/character.png"
 
 [autoload]
 
 GameManager="*res://manager/GameManager.gd"
+MusicController="*res://scenes/MusicController.tscn"
 
 [display]
 
@@ -94,6 +96,10 @@ click={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

@@ -6,7 +6,10 @@ func _ready():
 	set_friction(0.5)
 	
 func _process(_delta):
-	pass
+	$gui/health.value = GameManager.player_health
+	$gui/top/bg/coins/num.text = str(GameManager.player_coins)
+	$gui/top/leveltext.text = str(GameManager.player_level)
+	$gui/top/scenelevel.text = str(GameManager.scene_level)
 	
 func launch(force: Vector2):
 	apply_impulse(Vector2.ZERO, force)

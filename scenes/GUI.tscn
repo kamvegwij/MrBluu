@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/FlyingBird-Yz9Ga.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/img/bg_gui.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 2
+outline_color = Color( 0.552941, 0.294118, 0.0627451, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+outline_size = 2
+outline_color = Color( 0.67451, 0.133333, 0.133333, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 3
+outline_color = Color( 0.0352941, 0.0980392, 0.858824, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+outline_size = 3
+outline_color = Color( 0.0352941, 0.0980392, 0.858824, 1 )
+font_data = ExtResource( 1 )
+
+[node name="gui" type="CanvasLayer"]
+
+[node name="top" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -253.0
+margin_right = 255.0
+margin_bottom = 116.0
+
+[node name="bg" type="TextureRect" parent="top"]
+margin_right = 484.0
+margin_bottom = 91.0
+texture = ExtResource( 2 )
+
+[node name="health_text" type="Label" parent="top/bg"]
+margin_left = 33.0
+margin_top = 6.0
+margin_right = 163.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 2 )
+text = "Health"
+
+[node name="coins" type="Label" parent="top/bg"]
+margin_left = 308.0
+margin_top = 2.0
+margin_right = 350.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 2 )
+text = "Coins"
+
+[node name="num" type="Label" parent="top/bg/coins"]
+margin_left = 9.0
+margin_top = 25.0
+margin_right = 25.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 3 )
+text = "0"
+
+[node name="xpheader" type="Label" parent="top"]
+margin_left = 195.0
+margin_top = 4.0
+margin_right = 247.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 4 )
+text = "XP: "
+
+[node name="leveltext" type="Label" parent="top"]
+margin_left = 202.0
+margin_top = 29.0
+margin_right = 234.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 4 )
+text = "0"
+
+[node name="scenelevel" type="Label" parent="top"]
+margin_left = 414.0
+margin_top = 26.0
+margin_right = 446.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 4 )
+text = "0"
+
+[node name="header" type="Label" parent="top"]
+margin_left = 378.0
+margin_top = 4.0
+margin_right = 467.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 5 )
+text = "Current LVL"

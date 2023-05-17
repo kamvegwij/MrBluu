@@ -1,0 +1,157 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/fonts/FlyingBird-Yz9Ga.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Options.gd" type="Script" id=2]
+[ext_resource path="res://assets/img/person_click.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.105882, 0.0117647, 0.0117647, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.905882, 0.894118, 0.32549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.952941, 0.941176, 0.32549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.705882, 0.0980392, 0.0980392, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 25
+outline_size = 2
+outline_color = Color( 0.180392, 0.541176, 0.117647, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 383, 817 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "swipe"
+length = 2.0
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 270, 820 ), Vector2( 383, 817 ) ]
+}
+
+[node name="Options" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="bg" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = 4.0
+margin_top = 1.0
+margin_right = 513.0
+margin_bottom = 1019.0
+mouse_filter = 2
+color = Color( 0.419608, 0.709804, 0.756863, 1 )
+
+[node name="header" type="Label" parent="."]
+margin_left = 86.0
+margin_top = 85.0
+margin_right = 437.0
+margin_bottom = 205.0
+custom_fonts/font = SubResource( 1 )
+text = "Options"
+
+[node name="info" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 77.0
+margin_top = 515.0
+margin_right = 457.0
+margin_bottom = 750.0
+custom_fonts/font = SubResource( 2 )
+text = "Pass as many levels as you can by choosing the correct paths and avoiding the spikes!
+Collect health tokens  to heal your player and if you collect a health token with full health, it turns into coins!"
+autowrap = true
+
+[node name="center" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 288.0
+margin_top = 338.0
+margin_right = 328.0
+margin_bottom = 378.0
+
+[node name="text" type="Label" parent="center"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = -15.0
+margin_right = -94.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 2 )
+text = "Volume"
+
+[node name="volume_scroll" type="HScrollBar" parent="center"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = -11.0
+margin_right = 102.0
+margin_bottom = 14.0
+custom_styles/grabber_highlight = SubResource( 6 )
+custom_styles/scroll_focus = SubResource( 4 )
+custom_styles/scroll = SubResource( 3 )
+custom_styles/grabber_pressed = SubResource( 7 )
+min_value = -100.0
+max_value = 0.0
+step = 1.0
+
+[node name="prompt" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 153.0
+margin_top = 887.0
+margin_right = 408.0
+margin_bottom = 918.0
+custom_fonts/font = SubResource( 10 )
+text = "SWIPE LEFT TO CLOSE"
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 383, 817 )
+scale = Vector2( 0.0821428, 0.0687373 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/RESET = SubResource( 9 )
+anims/swipe = SubResource( 8 )

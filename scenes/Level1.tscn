@@ -75,6 +75,10 @@ position = Vector2( 1632, -597 )
 position = Vector2( 399, 301 )
 scale = Vector2( 0.440003, 0.400003 )
 
+[node name="obstacle4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 371, 971 )
+scale = Vector2( 0.440003, 0.400003 )
+
 [node name="obstacle2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 116, -533 )
 scale = Vector2( 0.440003, 0.400003 )
