@@ -12,7 +12,7 @@ func _ready():
 		dialog.connect("timeline_end", self, "after_dialog")
 		GameManager.player.sleeping = true
 		
-	if GameManager.scene_level == 1:
+	if GameManager.scene_level == 7:
 		GameManager.in_dialog = true
 		var dialog = Dialogic.start("MrBluuAttacks")
 		add_child(dialog)

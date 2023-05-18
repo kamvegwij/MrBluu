@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/VectorCreator.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Portal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/Ball.gd" type="Script" id=7]
 [ext_resource path="res://assets/tile/Grass sprite sheet.png" type="Texture" id=8]
 [ext_resource path="res://assets/img/32x32 first tileset.png" type="Texture" id=9]
 
@@ -63,7 +62,6 @@ color = Color( 0.0784314, 0.0901961, 0.0941176, 1 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( -954, -251 )
-script = ExtResource( 7 )
 
 [node name="Camera2D" type="Camera2D" parent="Ball"]
 current = true
