@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+enum CharacterClass{ DAMAGE_OUT = 15, BOOST = 5}
+
 func _ready():
 	$AnimationPlayer.play("mrbluu")
 	set_bounce(0.1)
@@ -14,3 +16,9 @@ func _process(_delta):
 func launch(force: Vector2):
 	apply_impulse(Vector2.ZERO, force)
 
+func attack():
+	print("attacking!")
+	
+func boost():
+	print("boosting!")
+	

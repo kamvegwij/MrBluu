@@ -10,7 +10,13 @@ func _ready():
 		var dialog = Dialogic.start("EnterAngryRed")
 		add_child(dialog)
 		dialog.connect("timeline_end", self, "after_dialog")
-		get_node("npcCam").set_current(true)
+		GameManager.player.sleeping = true
+		
+	if GameManager.scene_level == 1:
+		GameManager.in_dialog = true
+		var dialog = Dialogic.start("MrBluuAttacks")
+		add_child(dialog)
+		dialog.connect("timeline_end", self, "after_dialog")
 		GameManager.player.sleeping = true
 		
 func _process(_delta):
@@ -31,7 +37,7 @@ func level_up():
 	if GameManager.scene_level > 5:
 		GameManager.player_level = 5
 		
-func _after_dialog():
-	GameManager.in_dialog = true
+func after_dialog():
+	GameManager.in_dialog = false
 	GameManager.player.sleeping = false
-	get_node("npcCam").set_current(false)
+	
