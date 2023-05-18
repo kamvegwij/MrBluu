@@ -1,5 +1,5 @@
 extends Node2D
-
+#IMPORTANT! ADD TO EVERY LEVEL SCENE TO BE ABLE TO MOVE THE PLAYER!
 func _ready():
 	MusicController.stop_soundtrack()
 	GameManager.in_game = true
@@ -14,7 +14,7 @@ func _ready():
 		GameManager.player.sleeping = true
 		
 func _process(_delta):
-	if GameManager.scene_level > 5:
+	if GameManager.scene_level > 6:
 		print("complete levels")
 		
 	if GameManager.player_health <= 0:
@@ -30,6 +30,7 @@ func level_up():
 		GameManager.player_level = 2
 	if GameManager.scene_level > 5:
 		GameManager.player_level = 5
+		
 func _after_dialog():
 	GameManager.in_dialog = true
 	GameManager.player.sleeping = false

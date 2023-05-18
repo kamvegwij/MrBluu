@@ -4,7 +4,9 @@ var in_zone: bool = false
 
 func _process(_delta):
 	do_damage()
-	
+	if GameManager.scene_level == 1:
+		scale.y += 0.01
+		
 func _player_entered(body):
 	if body == GameManager.player and !GameManager.in_dialog:
 		print("player in red zone!!")
