@@ -1,13 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Portal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/health_coin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/RedZone.gd" type="Script" id=3]
-[ext_resource path="res://scenes/VectorCreator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/tile/Grass sprite sheet.png" type="Texture" id=5]
 [ext_resource path="res://assets/img/32x32 first tileset.png" type="Texture" id=6]
-[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/Ball.gd" type="Script" id=8]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=9]
 [ext_resource path="res://scenes/obstacle.tscn" type="PackedScene" id=10]
 
@@ -75,20 +73,6 @@ margin_bottom = 2286.0
 rect_scale = Vector2( 1.63535, 0.913284 )
 mouse_filter = 2
 color = Color( 0.419608, 0.709804, 0.756863, 1 )
-
-[node name="Ball" parent="." instance=ExtResource( 7 )]
-position = Vector2( -1118, -635 )
-script = ExtResource( 8 )
-
-[node name="Camera2D" type="Camera2D" parent="Ball"]
-position = Vector2( 0, 5 )
-current = true
-zoom = Vector2( 0.85, 0.85 )
-smoothing_enabled = true
-
-[node name="VectorCreator" parent="." instance=ExtResource( 4 )]
-position = Vector2( -728, -1014 )
-ball = NodePath("../Ball")
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -208,7 +192,9 @@ position = Vector2( -719, -826 )
 rotation = -1.57079
 scale = Vector2( 0.240001, 0.280001 )
 
-[connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1190, -637 )
+
 [connection signal="body_entered" from="RedZone" to="RedZone" method="_player_entered"]
 [connection signal="body_exited" from="RedZone" to="RedZone" method="_on_RedZone_body_exited"]
 [connection signal="body_entered" from="RedZone2" to="RedZone2" method="_player_entered"]

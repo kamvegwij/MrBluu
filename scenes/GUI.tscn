@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/fonts/FlyingBird-Yz9Ga.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/img/bg_gui.png" type="Texture" id=2]
@@ -27,6 +27,32 @@ size = 20
 outline_size = 3
 outline_color = Color( 0.0352941, 0.0980392, 0.858824, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0784314, 0.294118, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.0588235, 0.2, 0.00392157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0784314, 0.294118, 0, 1 )
+corner_radius_top_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 2
 
 [node name="gui" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -107,15 +133,21 @@ margin_top = 168.0
 margin_bottom = 236.0
 
 [node name="attack" type="Button" parent="attackcontrols"]
+visible = false
 margin_right = 105.0
 margin_bottom = 80.0
+disabled = true
 text = "ATTACK!"
 
 [node name="boost" type="Button" parent="attackcontrols"]
-margin_left = 406.0
-margin_right = 511.0
+margin_left = 400.0
+margin_right = 505.0
 margin_bottom = 80.0
-text = "BOOST"
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+text = "BURST ATTACK"
 
 [connection signal="pressed" from="attackcontrols/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="attackcontrols/boost" to="." method="_on_boost_pressed"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://scenes/VectorCreator.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tile/Grass sprite sheet.png" type="Texture" id=4]
 [ext_resource path="res://scenes/RedZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/img/32x32 first tileset.png" type="Texture" id=7]
@@ -62,19 +61,6 @@ rect_scale = Vector2( 1.63535, 0.913284 )
 mouse_filter = 2
 color = Color( 0.419608, 0.709804, 0.756863, 1 )
 
-[node name="Ball" parent="." instance=ExtResource( 3 )]
-position = Vector2( -728, -1019 )
-
-[node name="Camera2D" type="Camera2D" parent="Ball"]
-position = Vector2( 0, 5 )
-current = true
-zoom = Vector2( 0.85, 0.85 )
-smoothing_enabled = true
-
-[node name="VectorCreator" parent="." instance=ExtResource( 2 )]
-position = Vector2( -728, -1014 )
-ball = NodePath("../Ball")
-
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color( 0.956863, 0.117647, 0.117647, 1 )
 show_behind_parent = true
@@ -91,4 +77,5 @@ position = Vector2( 121, -1086 )
 [node name="health_coin" parent="." instance=ExtResource( 9 )]
 position = Vector2( -11, -1090 )
 
-[connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -706, -1043 )

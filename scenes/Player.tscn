@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/VectorCreator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=3]
+[ext_resource path="res://assets/img/health_bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/heath_progress.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/FlyingBird-Yz9Ga.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+outline_size = 2
+outline_color = Color( 0.552941, 0.294118, 0.0627451, 1 )
+font_data = ExtResource( 6 )
+
+[node name="Player" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Ball" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="Ball"]
+current = true
+zoom = Vector2( 0.85, 0.85 )
+
+[node name="gui" parent="Ball" instance=ExtResource( 7 )]
+
+[node name="health" type="TextureProgress" parent="Ball/gui"]
+margin_left = 22.0
+margin_top = 38.0
+margin_right = 132.0
+margin_bottom = 55.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+nine_patch_stretch = true
+
+[node name="info" type="Label" parent="Ball/gui"]
+visible = false
+margin_left = 166.0
+margin_top = 91.0
+margin_right = 314.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
+text = "player state..."
+
+[node name="VectorCreator" parent="." instance=ExtResource( 1 )]
+ball = NodePath("../Ball")
+
+[connection signal="attacking" from="Ball/gui" to="Ball" method="attack"]
+[connection signal="boosting" from="Ball/gui" to="Ball" method="boost"]
+[connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]

@@ -35,7 +35,7 @@ func boost():
 		boosting = true
 		$gui/info.text = "boosting cooling down"
 		$gui/info.visible = true
-		apply_impulse(Vector2.ZERO, Vector2(250, 0))
+		apply_impulse(Vector2.ZERO, Vector2(500, 0))
 		yield(get_tree().create_timer(5), "timeout")
 		$gui/info.visible = false
 		boosting = false

@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/tile/Grass sprite sheet.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Ball.gd" type="Script" id=2]
-[ext_resource path="res://scenes/VectorCreator.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=6]
 [ext_resource path="res://scenes/obstacle.tscn" type="PackedScene" id=7]
@@ -36,20 +34,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 6 )
-
-[node name="Ball" parent="." instance=ExtResource( 4 )]
-position = Vector2( -392, -1159 )
-script = ExtResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="Ball"]
-position = Vector2( 0, 5 )
-current = true
-zoom = Vector2( 0.85, 0.85 )
-smoothing_enabled = true
-
-[node name="VectorCreator" parent="." instance=ExtResource( 3 )]
-position = Vector2( -392, -1154 )
-ball = NodePath("../Ball")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
@@ -94,4 +78,5 @@ scale = Vector2( 0.319998, 0.319998 )
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1502, 1029 )
 
-[connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -292, -1157 )

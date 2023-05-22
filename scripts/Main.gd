@@ -1,9 +1,9 @@
 extends Node2D
 #IMPORTANT! ADD TO EVERY LEVEL SCENE TO BE ABLE TO MOVE THE PLAYER!
+
 func _ready():
 	MusicController.stop_soundtrack()
 	GameManager.in_game = true
-	GameManager.player = $Ball
 	
 	if GameManager.scene_level == 4:
 		GameManager.in_dialog = true
@@ -27,7 +27,6 @@ func _process(_delta):
 		get_tree().change_scene("res://scenes/GameOver.tscn")
 		
 	level_up()
-	$VectorCreator.position = $Ball.position
 
 func level_up():
 	if GameManager.scene_level > 1:
